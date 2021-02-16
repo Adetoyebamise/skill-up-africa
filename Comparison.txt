@@ -1,0 +1,8 @@
+Comparison between Amazon Echo and Google Home
+
+
+Google Home is a smart home hub made by Google that integrates well with other Google-powered devices like Chromecast, Nest Thermostats and Nest Cams. This hub can carry contextual conversations and give you seamless responses to multiple commands. 
+Google Home, is a line of smart speakers developed by Google under the Google Nest brand. The devices enable users to speak voice commands to interact with services through Google Assistant, the company's virtual assistant.
+
+Amazon Echo also known as Alexa is a software created by Amazon that is integrated into the hub, Amazon Echo. Alexa acts as a virtual assistant that can be taught new commands and is constantly being updated to become more “human-like”. Alexa is more compatible with a home that uses Amazon Fire Stick, Ring Cams and Doorbells or maybe the ecobee smart thermostat.
+Amazon Echo is a brand of smart speakers developed by Amazon. Echo devices connect to the voice-controlled intelligent personal assistant service Alexa, which will respond when you say the name "Alexa". Users may change this wake word to "Amazon", "Echo" or "Computer".
