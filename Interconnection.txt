@@ -1,0 +1,6 @@
+State what kind of interconnection is possible with these devices
+
+1) Amazon  Echo: The device uses wireless connection as a means to connect to the internet.
+
+2) Google Home conncts using Wireless connection; wifi dual band(2.4/5ghz) 802.11b/g/n/ac. 
+Bluetooth connection.
