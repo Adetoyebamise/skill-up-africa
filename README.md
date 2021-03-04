@@ -2,12 +2,12 @@
 This is an assingnment given to us by our instructor Lordgape to further get familiar with git. 
 
     Here are some command line that helpt me with the assignments
- *cd ..
+ 1 cd ..
  
-*ls -la 
+2 ls -la 
 
-*git init
+3 git init
 
- *echo "# skillup" >> README.md 
+ 4 echo "# skillup" >> README.md 
  
-*cd <directory location/path>
+5 cd <directory location/path>
