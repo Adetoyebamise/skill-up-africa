@@ -1,2 +1,2 @@
 # skillupafrica
-Our little project with Lordgabe
+Our little project with Lordgape
