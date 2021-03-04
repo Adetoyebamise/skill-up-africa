@@ -8,4 +8,4 @@
     Step 6 : Set your conditions
     Step 6 : Swap if conditions are met
     Step 7 : Check if the array is sorted
-    Step 8 : If array is corted. Stop
+    Step 8 : If array is sorted. Stop
