@@ -1,5 +1,5 @@
 #### skillup
-This is an assingnment given to us by our instructor Lordgape to further get familiar with git. 
+This is an assignment given to us by our instructor Lordgape to further get familiar with git. 
 
     Here are some command line that helpt me with the assignments
  1 cd ..
@@ -8,6 +8,6 @@ This is an assingnment given to us by our instructor Lordgape to further get fam
 
 3 git init
 
- 4 echo "# skillup" >> README.md 
- 
+4 echo "# skillup" >> README.md 
+
 5 cd <directory location/path>
