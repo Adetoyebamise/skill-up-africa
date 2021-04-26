@@ -1,2 +1,2 @@
 #### skillupafrica
-Basic programming concept
+Basic programming concepts
