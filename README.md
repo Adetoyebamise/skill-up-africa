@@ -1,2 +1,2 @@
 #### skillupafrica
-Our little project with Lordgape
+Basic programming concept
