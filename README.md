@@ -1,4 +1,4 @@
-#### skillupafrica
+### Skillupafrica Learnings
 
 **Basic programming concepts**
 
