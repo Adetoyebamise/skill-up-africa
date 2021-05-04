@@ -4,12 +4,9 @@ const Stream = require("stream");
 const writableStream = new Stream.Writable();
 
 const server = http.createServer((request, response) => {
+  response.writeHead(200, { "Content-Type": "video/mp4" });
   const stream = fs.createReadStream(__dirname + "/1-fav-scene-recording.mp4");
   let body = "";
-  request.setEncoding("utf8");
-  request.on("data", (chunk) => {
-    body += chunk;
-  });
   stream.pipe(response);
 });
 

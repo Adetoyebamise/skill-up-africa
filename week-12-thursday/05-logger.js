@@ -10,7 +10,7 @@ loggerEmitter.on("event", (message) => {
   );
 });
 
-logger("Kee");
+// logger("Kee");
 
 exports.logger = logger;
 // A device or computer program for making a systematic recording of events, observations, or measurements.
