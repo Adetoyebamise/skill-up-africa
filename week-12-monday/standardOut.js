@@ -1,1 +1,1 @@
-// Spell it out standard output and standard input
+// Standard output and standard input

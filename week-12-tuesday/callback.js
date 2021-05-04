@@ -8,7 +8,7 @@ const call = (reachUsCallback) => {
 const ringOutFunction = () => {
   console.log(`she's calling`);
 };
-const connectWith = (reachUsCallback) => {
+const connectWith = () => {
   console.log(`leave a message`);
 };
 call();

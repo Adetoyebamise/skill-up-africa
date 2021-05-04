@@ -15,3 +15,6 @@ const foo = () => {
   baz();
 };
 foo();
+
+// Event loop manager
+// Call Stack [Item], Message Queue [], Job Queue [], Next tick []

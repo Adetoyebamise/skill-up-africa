@@ -11,8 +11,14 @@ fs.readdir(__dirname, (error, files) => {
 
 console.log(`First tick`);
 
-//to convert callack to proise using the fs promisemodule
+// convert callack to promise using the fs promise module
 
-const mySpecialFunction = (async() = {});
+const mySpecialFunction = async () => {
+  const files = await fs.readdir(__dirname);
+  console.log(file);
+};
 
 mySpecialFunction();
+fs.readdir(__dirname)
+  .then((resolve) => console.log(resolve))
+  .catch((error) => console.log(error));
