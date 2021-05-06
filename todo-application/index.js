@@ -1,20 +1,21 @@
 const express = require("express");
+const rateLimit = require("express-rate-limit");
 const routes = require("./routes");
-const multer = require("multer");
-const bodyParser = require("body-parser"); // queryString or qs
-
-const upload = multer();
+const middleware = require("./middleware"); // queryString or qs
 
 const app = express();
 
-// TODO organised the middleware to have its own file. Just like the route .
+// TODO: organised the middleware to have its own file. Just like the route .
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-// TODO add a rate limiter to this application
+// TODO: add a rate limiter to this application
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+});
+app.use(limiter);
 
 routes(app);
+middleware(app);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

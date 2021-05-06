@@ -38,6 +38,13 @@ router.get("/:id", (request, response) => {
 
 router.delete("/:id", (request, response) => {
   // TODO Implement this route
+  let todoId = request.params.id;
+  if (todoId) {
+    response.send("todo deleted");
+    response.json({ code: "success", error: null });
+  } else {
+    throw error;
+  }
   response.send("todo deleted");
 });
 
