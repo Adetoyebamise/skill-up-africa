@@ -6,6 +6,14 @@
 
 **All other flavors of software**
 
-**Creating CRUD**
+**Basic Operations: Create, Read, Update, Delete (CRUD)**
 
-**Create Controller**
+**Routing**
+
+**Implementation of the MVC model**
+
+#### Databases
+   - Relational Database
+   - Non-Relational Database
+
+  **ACID Principle**
