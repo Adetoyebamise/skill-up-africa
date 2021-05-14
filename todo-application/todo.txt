@@ -10,3 +10,8 @@
 - Port DB to NoSQL (Mongodb)
 - Create Views for todos
 - Write Unit test
+
+// Todo schema
+- uniqueId
+- description
+- isComopleted

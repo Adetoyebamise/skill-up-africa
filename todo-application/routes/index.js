@@ -1,16 +1,15 @@
 const todoRoute = require("./todoRoutes");
 
 module.exports = (app) => {
+  app.get("/", (request, response) => {
+    response.json({ success: "You just Ping me !" });
+  });
+
   app.use("/health", (request, response) => {
     response.send("I'm in a good working condition");
   });
 
   app.use("/todos", todoRoute);
-
-  app.get("/", (request, response) => {
-    console.log(`I go here`);
-    response.json({ success: "You just Ping me !" });
-  });
 };
 
 // Route

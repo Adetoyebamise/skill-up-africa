@@ -1,11 +1,32 @@
 const express = require("express");
 const rateLimit = require("express-rate-limit");
+const app = express();
+const mongoose = require("mongoose");
+require("dotenv").config();
+require("./models/sequelize/index");
+const configs = require("./configs/configs.json");
+const PORT = process.env.PORT || 3000;
+
 const routes = require("./routes");
 const middleware = require("./middleware"); // queryString or qs
 
-const app = express();
+routes(app);
+middleware(app);
 
-// TODO: organised the middleware to have its own file. Just like the route .
+// connect to mondodb
+// mongoose
+//   .connect(configs.databaseURI, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then((result) =>
+//     app.listen(PORT, () => {
+//       console.log(`Database connected: Server is lisening on port ${PORT}`);
+//     })
+//   )
+//   .catch((error) => {
+//     console.log(error.message);
+//   });
 
 // TODO: add a rate limiter to this application
 const limiter = rateLimit({
@@ -14,10 +35,6 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-routes(app);
-middleware(app);
-
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is lisening on port ${PORT}`);
+  console.log(`listening on port ${PORT}`);
 });
