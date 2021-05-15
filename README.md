@@ -17,3 +17,9 @@
    - Non-Relational Database
 
   **ACID Principle**
+  
+  
+#### Server Rendering
+   There to ways we can compile html
+      - Embedded JavaScript(EJS) or the Handlebars JavaScript(HBS)
+      - Usin frameworks like React Vue or Angular
