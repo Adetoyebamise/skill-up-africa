@@ -13,10 +13,16 @@
 **Implementation of the MVC model**
 
 #### Databases
+      Database are usually large collection of data organized especially for rapid search and retrival
+
    - Relational Database
    - Non-Relational Database
 
   **ACID Principle**
+    Atomicity
+    Conistency
+    Isolation
+    Durability
   
   
 #### Server Rendering
