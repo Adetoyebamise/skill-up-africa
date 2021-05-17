@@ -13,21 +13,6 @@ const middleware = require("./middleware"); // queryString or qs
 routes(app);
 middleware(app);
 
-// connect to mondodb
-// mongoose
-//   .connect(configs.databaseURI, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then((result) =>
-//     app.listen(PORT, () => {
-//       console.log(`Database connected: Server is lisening on port ${PORT}`);
-//     })
-//   )
-//   .catch((error) => {
-//     console.log(error.message);
-//   });
-
 // TODO: add a rate limiter to this application
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,

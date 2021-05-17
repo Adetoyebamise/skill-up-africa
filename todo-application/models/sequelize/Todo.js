@@ -1,7 +1,7 @@
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class todos extends Model {}
-  todos.init(
+  class phraseYourTodo extends Model {}
+  phraseYourTodo.init(
     {
       uniqueid: DataTypes.STRING,
       description: DataTypes.STRING,
@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "todos",
+      modelName: "phraseYourTodo",
     }
   );
-  return todos;
+  return phraseYourTodo;
 };

@@ -8,7 +8,7 @@ const TodoController = require("../controllers/todoController");
  */
 router.get("/", (request, response) => {
   console.log("get all");
-  TodoController.getAllTodos(request, response);
+  TodoController.createTodo(request, response);
 });
 
 /**
@@ -31,39 +31,39 @@ router.post("/", (request, response) => {
 
 /* Create a Todo (request by user) - unique id, description, isCompleted // application/json */
 
-// router.post("/", (request, response) => {
-//   let newTodo = {
-//     uniqueId: uuidv4(),
-//     description: request.body.description,
-//     isCompleted: false,
-//   };
+router.post("/", (request, response) => {
+  let newTodo = {
+    uniqueId: uuidv4(),
+    description: request.body.description,
+    isCompleted: false,
+  };
 
-//   todosDB.push(newTodo);
-//   response.status(201).json({ code: "SUCCESS", success: newTodo, error: null });
-// });
+  todosDB.push(newTodo);
+  response.status(201).json({ code: "SUCCESS", success: newTodo, error: null });
+});
 
 /*  Get a Todo by unique id */
 
-// router.get("/:id", (request, response) => {
-//   let todoId = request.params.id;
+router.get("/:id", (request, response) => {
+  let todoId = request.params.id;
 
-//   let foundTodo = todosDB.find((todo) => todo.uniqueId == todoId);
+  let foundTodo = todosDB.find((todo) => todo.uniqueId == todoId);
 
-//   response.json({ code: "SUCCESS", success: foundTodo, error: null });
+  response.json({ code: "SUCCESS", success: foundTodo, error: null });
 
-// TODO return a proper response to the user when no todo is found.
-// });
+  // TODO return a proper response to the user when no todo is found.
+});
 
-// router.delete("/:id", (request, response) => {
-// TODO Implement this route
-//   let todoId = request.params.id;
-//   if (todoId) {
-//     response.send("todo deleted");
-//     response.json({ code: "success", error: null });
-//   } else {
-//     throw error;
-//   }
-//   response.send("todo deleted");
-// });
+router.delete("/:id", (request, response) => {
+  // TODO Implement this route
+  let todoId = request.params.id;
+  if (todoId) {
+    response.send("todo deleted");
+    response.json({ code: "success", error: null });
+  } else {
+    throw error;
+  }
+  response.send("todo deleted");
+});
 
 module.exports = router;

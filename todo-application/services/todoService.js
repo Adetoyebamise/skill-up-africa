@@ -1,5 +1,6 @@
+const { request } = require("express");
 const { v4: uuidv4 } = require("uuid");
-const Todo = require("../models/mongoose/todo");
+// const Todo = require("../models/mongoose/todo");
 const db = require("../models/sequelize");
 
 // CRUD
@@ -38,13 +39,13 @@ module.exports = class TodoService {
   static async getAllTodos(description) {
     return Todo.find().sort({ description: 1 });
 
-    // let newTodo = {
-    //   uniqueId: uuidv4(),
-    //   description: description,
-    //   isCompleted: false,
-    // };
+    let newTodo = {
+      uniqueId: uuidv4(),
+      description: description,
+      isCompleted: false,
+    };
 
-    // todosDB.push(newTodo);
+    todosDB.push(newTodo);
   }
 
   /**
