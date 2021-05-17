@@ -17,10 +17,10 @@ module.exports = class TodoController {
   }
   static async getAllTodos(request, response) {
     try {
-      let newTodo = await TodoService.getAllTodos(request.body.description);
+      let TodoList = await TodoService.getAllTodos(request.body.description);
       response
         .status(201)
-        .json({ code: "SUCCESS", success: Todo, error: null });
+        .json({ code: "SUCCESS", success: TodoList, error: null });
     } catch (error) {
       response.status(500).json({
         code: "FAILED",
@@ -46,6 +46,20 @@ module.exports = class TodoController {
   static async deleteTodoById(request, response) {
     try {
       let deleteTodo = await TodoService.deleteTodoById(request.params.id);
+      response
+        .status(201)
+        .json({ code: "SUCCESS", success: deleteTodo, error: null });
+    } catch (error) {
+      response.status(500).json({
+        code: "FAILED",
+        success: null,
+        error: error.message || "Oops you cannot create todo at the moment",
+      });
+    }
+  }
+  static async getTodoByproperty(request, response) {
+    try {
+      let deleteTodo = await TodoService.getTodoByProperty(request.params.id);
       response
         .status(201)
         .json({ code: "SUCCESS", success: deleteTodo, error: null });

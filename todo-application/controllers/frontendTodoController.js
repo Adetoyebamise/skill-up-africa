@@ -17,10 +17,8 @@ module.exports = class frontendTodoController {
   }
   static async getAllTodos(request, response) {
     try {
-      let newTodo = await TodoService.getAllTodos(request.body.description);
-      response
-        .status(201)
-        .json({ code: "SUCCESS", success: newTodo, error: null });
+      let todoList = await TodoService.getAllTodos();
+      response.render("index", { phraseYourTodos: [todoList] });
     } catch (error) {
       response.status(500).json({
         code: "FAILED",

@@ -34,18 +34,17 @@ module.exports = class TodoService {
       iscompleted: false,
     });
     return newTodo;
-    // get todo by property.
   }
-  static async getAllTodos(description) {
-    return Todo.find().sort({ description: 1 });
+  static async getAllTodos() {
+    return todoList.find().sort({ description: 1 });
 
-    let newTodo = {
-      uniqueId: uuidv4(),
-      description: description,
-      isCompleted: false,
-    };
+    // let newTodo = {
+    //   uniqueId: uuidv4(),
+    //   description: description,
+    //   isCompleted: false,
+    // };
 
-    todosDB.push(newTodo);
+    // todosDB.push(newTodo);
   }
 
   /**
@@ -76,6 +75,6 @@ module.exports = class TodoService {
 
     return sortTodo;
   }
+  static getTodoByProperty(description) {}
 };
-
 // job queue

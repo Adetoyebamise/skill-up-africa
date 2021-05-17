@@ -11,3 +11,8 @@ Post Module
 
 /posts => all user
 /posts/:id => particular post
+
+**Working with sequelize model: Extending model**
+A model in Sequelize has a name. This name does not have to be the same name of the table it represents in the database.
+
+    Sequelize automatically pluralizes the model name and uses that as the table name.

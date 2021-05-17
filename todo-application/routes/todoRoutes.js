@@ -2,9 +2,28 @@ const router = require("express").Router();
 const { v4: uuidv4 } = require("uuid");
 const TodoController = require("../controllers/todoController");
 
+const TodoService = require("../services/todoService");
+// const frontendTodoController = require("../controllers/frontendTodoController");
+
 /**
  * @description list all todos
  * @api /todos
+ */
+
+router.get("/todos", async (request, response) => {
+  const todoList = await TodoService.getAllTodos();
+  response.render("index", { phraseYourTodos: [todoList] });
+});
+
+// router.get("/todos", async (request, response) => {
+//   console.log("User phrase another todo");
+//   const todoList = await frontendTodoController.getAllTodos(request, response);
+//   response.render("index", { phraseYourTodos: [todoList] });
+// });
+
+/**
+ * @description list all todos
+ * @api /api/v1/todos
  */
 router.get("/", (request, response) => {
   console.log("get all");
