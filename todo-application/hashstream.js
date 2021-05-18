@@ -1,13 +1,6 @@
 const http = require("http");
 const { emit } = require("process");
 
-// JSON fetching
-// let response = {
-//   method: "GET",
-//   headers: {
-//     "Content-Type": "application/json;charset=utf-8",
-//   },
-// };
 http.get(
   "http://coderbyte.com/api/challenges/json/age-counting",
   (request, response) => {
@@ -32,15 +25,3 @@ http.get(
     }
   }
 );
-
-// Create a local server to receive data from
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "application/json" });
-  res.end(
-    JSON.stringify({
-      data: "Hello World!",
-    })
-  );
-});
-
-server.listen(8000);
