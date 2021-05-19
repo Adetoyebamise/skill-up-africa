@@ -18,10 +18,20 @@
    - Relational Database
    - Non-Relational Database
 
+| Relational Database     | Non-Relational Database     |
+|-------------------------|-----------------------------|
+| Stores data on tables that relates to eachother based on item key values | NoSQL databases stores Data individual flat; object-driven datasets |
+| Relatonal database allows complex sorting/filtering of data | Non relational databases are often faster to index and scale easier than relational databases |
+
+
   **ACID Principle**
+  
     Atomicity
+    
     Conistency
+    
     Isolation
+    
     Durability
   
   
@@ -29,4 +39,4 @@
    There to ways we can compile html
    
       - Embedded JavaScript(EJS) or the Handlebars JavaScript(HBS)
-      - Using frameworks like React Vue or Angular
+      - Using frameworks/Single Page Application like React Vue or Angular
