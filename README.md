@@ -4,8 +4,6 @@
 
 **Learning nodejs**
 
-**All other flavors of software**
-
 **Basic Operations: Create, Read, Update, Delete (CRUD)**
 
 **Routing**
@@ -40,3 +38,5 @@
    
       - Embedded JavaScript(EJS) or the Handlebars JavaScript(HBS)
       - Using frameworks/Single Page Application like React Vue or Angular
+      
+**All other flavors of software**
