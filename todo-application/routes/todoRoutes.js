@@ -1,54 +1,50 @@
 const router = require("express").Router();
 const { v4: uuidv4 } = require("uuid");
 const TodoController = require("../controllers/todoController");
-
 const TodoService = require("../services/todoService");
-// const frontendTodoController = require("../controllers/frontendTodoController");
+const frontendTodoController = require("../controllers/frontendTodoController");
 
 /**
- * @description list all todos
- * @api /todos
+ * @description list all todos;
+ * @api /todos ;
  */
-
+// get all todos;
 router.get("/todos", async (request, response) => {
   const todoList = await TodoService.getAllTodos();
   response.render("index", { phraseYourTodos: [todoList] });
 });
 
-// router.get("/todos", async (request, response) => {
-//   console.log("User phrase another todo");
-//   const todoList = await frontendTodoController.getAllTodos(request, response);
-//   response.render("index", { phraseYourTodos: [todoList] });
-// });
-
-/**
- * @description list all todos
- * @api /api/v1/todos
- */
-router.get("/", (request, response) => {
-  console.log("get all");
-  TodoController.createTodo(request, response);
+router.get("/todos", async (request, response) => {
+  console.log("User phrase another todo");
+  const todoList = await frontendTodoController.getAllTodos(request, response);
+  response.render("index", { phraseYourTodos: [todoList] });
 });
 
 /**
- * @description create a Todo unique id, description, isCompleted ; application.json
+ * @description list all todos;
+ * @api /api/v1/todos
  */
-router.get("/", (request, response) => {
-  console.log("user created todo");
-  TodoController.createTodo(request, response);
+router.get("/", async (request, response) => {
+  console.log("get all");
+  const todoList = await TodoController.getAllTodos(request, response);
+  response
+    .status(200)
+    .send({ code: "SUCCESS", success: todoList, error: null });
 });
 
 router.post("/", (request, response) => {
   console.log("next stop");
-  TodoController.sortTodoDesription(request, response);
+  TodoController.getAllTodos(request, response);
 });
 
-/* List all todos */
+/**
+ * @description create a Todo unique id, description, isCompleted ; application.json
+ * List all todos  and perform basic CRUD operations;
+ */
 
-// CRUD
-// const todosDB = [];
+const todosDB = [];
 
-/* Create a Todo (request by user) - unique id, description, isCompleted // application/json */
+/* Create a Todo (request by user) - unique id, description, isCompleted application/json */
 
 router.post("/", (request, response) => {
   let newTodo = {

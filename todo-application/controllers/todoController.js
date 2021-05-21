@@ -17,15 +17,15 @@ module.exports = class TodoController {
   }
   static async getAllTodos(request, response) {
     try {
-      let TodoList = await TodoService.getAllTodos(request.body.description);
+      let todoList = await TodoService.getAllTodos(todoList);
       response
         .status(201)
-        .json({ code: "SUCCESS", success: TodoList, error: null });
+        .json({ code: "SUCCESS", success: todoList, error: null });
     } catch (error) {
       response.status(500).json({
         code: "FAILED",
         success: null,
-        error: error.message || "Oops you cannot create todo at the moment",
+        error: error.stack || "Oops you cannot create todo at the moment",
       });
     }
   }
@@ -57,12 +57,15 @@ module.exports = class TodoController {
       });
     }
   }
-  static async getTodoByproperty(request, response) {
+  static async getTodoByProperty(request, response) {
     try {
-      let deleteTodo = await TodoService.getTodoByProperty(request.params.id);
+      let getTodo = await TodoService.getTodoByProperty(
+        request.params.id,
+        request.body
+      );
       response
         .status(201)
-        .json({ code: "SUCCESS", success: deleteTodo, error: null });
+        .json({ code: "SUCCESS", success: getTodo, error: null });
     } catch (error) {
       response.status(500).json({
         code: "FAILED",

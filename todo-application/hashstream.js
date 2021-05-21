@@ -1,27 +1,39 @@
-const http = require("http");
-const { emit } = require("process");
+const crypto = require("crypto");
+const fs = require("fs");
+const http = require("https");
 
-http.get(
-  "http://coderbyte.com/api/challenges/json/age-counting",
-  (request, response) => {
-    const statusCode = response;
-    const contentType = response.headers("content-type");
-    let error;
+const RESOURCE_URL = "https://coderbyte.com/api/challenges/json/age-counting";
 
-    //checking for 200 status code
-    if (statusCode !== 200) {
-      error = new Error("Request Failed.\n" + `statusCode:${statusCode}`);
-    } else if (!/^application\/json/.test(contentType)) {
-      error = new Error(
-        "Invalid content-type.\n" +
-          `We Expected application/json but received ${contentType}`
-      );
+http.get(RESOURCE_URL, (response) => {
+  let body = "";
+
+  response.on("data", (chunk) => {
+    body += chunk;
+  });
+  response.on("end", () => {
+    const jsonBody = JSON.parse(body).data;
+    const keyValueList = jsonBody.split(", ");
+    const numberOfAge32 = keyValueList.filter(
+      (item) => item == "age=32"
+    ).length;
+    keyValueList.unshift(numberOfAge32);
+    console.log(numberOfAge32);
+    const writeStream = fs.createWriteStream("output.txt");
+    for (const keyValue of keyValueList) {
+      writeStream.write(keyValue + "\n");
     }
-    if (error) {
-      console.error(error.message);
-      // consume response data
-      response.resume();
-      return;
-    }
-  }
-);
+    writeStream.write("\n");
+    let myHash = getHash("output.txt");
+  });
+});
+
+const getHash = (fileName) => {
+  const readStream = fs.createReadStream(fileName);
+  const hash = crypto.createHash("SHA1");
+  readStream.on("data", (chunk) => {
+    hash.update(chunk);
+  });
+  readStream.on("end", () => {
+    return hash.digest("hex");
+  });
+};

@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       iscompleted: DataTypes.BOOLEAN,
     },
     {
+      // Other model options
       sequelize,
       modelName: "phraseYourTodo", // choose model name
     }

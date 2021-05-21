@@ -1,4 +1,4 @@
-// const TodoService = require("../services/todoService");
+const TodoService = require("../services/todoService");
 
 module.exports = class frontendTodoController {
   static async createTodo(request, response) {

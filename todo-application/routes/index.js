@@ -2,7 +2,7 @@ const todoRoute = require("./todoRoutes");
 const TodoService = require("../services/todoService");
 
 module.exports = (app) => {
-  // app.get("/todos", todoRoute);
+  app.get("/todos", todoRoute);
 
   app.get("/todos", async (request, response) => {
     const todoList = await TodoService.createTodo();
