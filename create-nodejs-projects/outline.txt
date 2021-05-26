@@ -1,0 +1,17 @@
+Project 1: Simple Web Server 
+Project 2: Basic Express Website 
+Project 3: User Login System 
+Project 4: Node Blog Systems 
+Project 5: Community Events 
+Project 6: BookStore 
+Project 7: Chat IO 
+Project 8: Doctor Directory
+Project 9: Portfolio App
+Project 10: Elearning System 
+Project 11: Recipe Book
+Project 12: Album Organizer
+Project 13: Build a REST API with Node.js, Express, and MOngoDB
+Project 14: Build a Real Tme Chat App with Node.js and Socket.io
+
+
+Passport Recovery: Create a page where a user can input the email address and they would get a message in their email instantly

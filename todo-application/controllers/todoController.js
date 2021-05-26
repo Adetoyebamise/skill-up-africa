@@ -17,7 +17,7 @@ module.exports = class TodoController {
   }
   static async getAllTodos(request, response) {
     try {
-      let todoList = await TodoService.getAllTodos(todoList);
+      let todoList = await TodoService.getAllTodos(request.body.description);
       response
         .status(201)
         .json({ code: "SUCCESS", success: todoList, error: null });
