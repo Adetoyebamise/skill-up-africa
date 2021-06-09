@@ -9,6 +9,7 @@ const app = express();
 const expressLayouts = require("express-ejs-layouts");
 const indexRouter = require("./routes/index");
 const authorRouter = require("./routes/authors");
+const bookRouter = require("./routes/books");
 const configs = require("./configs/configs.dist.json");
 const bodyParser = require("body-parser");
 
@@ -25,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //create route
 app.use("/", indexRouter);
 app.use("/authors", authorRouter);
+app.use("/books", bookRouter);
 
 // connect to mongodatabase
 const mongoose = require("mongoose");
