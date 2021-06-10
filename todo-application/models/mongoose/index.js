@@ -1,4 +1,4 @@
-//connect to mondodb
+//connect to mongodb
 mongoose
   .connect(configs.databaseURI, {
     useNewUrlParser: true,

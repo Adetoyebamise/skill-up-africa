@@ -14,14 +14,21 @@ module.exports = class TodoService {
    *
    */
   static async createTodo(description) {
-    const { error, isValid } = await TodoValidationLogic.todoCreationLogic(
+    console.log("I am running validation");
+
+    const { error, isValid } = await TodoValidationLogic.todoCreation(
       description
     );
 
     if (!isValid) {
+      console.log("Validation failss for create todo");
+
       throw new Error(error.description);
     }
 
+    console.log("Validation pass for create todo");
+
+    console.log("I am about to create a todo on my database");
     // working with the mysql database
 
     let newTodo = db.Todo.create({
@@ -30,6 +37,7 @@ module.exports = class TodoService {
       iscompleted: false,
     });
 
+    console.log("Done creating");
     return newTodo;
 
     // working with mondodb database

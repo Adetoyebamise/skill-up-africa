@@ -1,11 +1,17 @@
 const validator = require("validator");
+const common = require("./common");
 
 module.exports = class TodoValidation {
   // description cannot be empty. We dont want only numbers. we dont want boolean - Product manager.
   static async todoCreation(description) {
     let error = {};
 
-    if (Validator.isEmpty(description)) {
+    // if (Validator.isEmpty(description)) {
+    //   error.description = "We do not accept empty description";
+    // }
+
+    // working with the class from common file
+    if (common.isEmpty(description)) {
       error.description = "We do not accept empty description";
     }
 
@@ -16,6 +22,10 @@ module.exports = class TodoValidation {
     if (Validator.isBoolean(description)) {
       error.description = "We do not accept boolean values";
     }
+
+    // if (Validator.isEmpty(description)) {
+    //   error.description = "We do not accept empty description";
+    // }
 
     return {
       error,

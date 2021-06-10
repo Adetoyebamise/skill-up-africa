@@ -13,6 +13,8 @@ const todoSchema = Mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  createdAt: {},
+  updatedAt: {},
 });
 
 const Todo = Mongoose.model("todos", todoSchema);
